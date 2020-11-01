@@ -1,0 +1,125 @@
+.elementContainer {
+    transform: rotateX(150deg);
+    display: flex;
+    flex-direction: column;
+    background: #5E5768;
+    width: 350px;
+    color:#FCDEBE;
+    height: 350px;
+    border-radius: 10px;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: center;
+    margin-top: 100px;
+    -webkit-animation: flip-scale-down-diag-1 0.5s linear both;
+     animation: flip-scale-down-diag-1 0.5s linear both;
+    .infoButton {
+        position: absolute;
+        margin-left: 300px;
+        margin-top: -300px;
+    }
+    .atomicNumber {
+        margin-left: -295px;
+        margin-top:-295px;
+        position: absolute;
+        font-size: 30px;
+    }
+    .symbol {
+        font-size: 75px;
+        background-color: #928779;
+        height: 250px;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 125px;
+    }
+    .lowerInfo {
+        font-size: 20px;
+        margin-top: 275px;
+        margin-left: -245px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.elementProperties {
+    display: flex;
+    flex-direction: row;
+    background: #5E5768;
+    color:#FCDEBE;
+    width: 350px;
+    height: 375px;
+    border-radius: 10px;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: center;
+    margin-top: 100px;
+    -webkit-animation: flip-scale-down-diag-1 0.5s linear both;
+    animation: flip-scale-down-diag-1 0.5s linear both;
+    font-size: 15px;
+    .elementTitle {
+        position: absolute;
+        margin-top: -295px;
+        margin-left: 0px;
+    }
+    .elementButton {
+        position: absolute;
+        margin-left: 300px;
+        margin-top: -300px;
+    }
+    .propertiesLeft {
+        margin-top: 35px;
+        margin-left: -15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .propertiesRight {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+        ul {
+            list-style-type: none;
+            width: 100%;
+            li {
+                margin-bottom: 15px;
+                span {
+                    color:#D4D2A5;
+                }
+            }
+        }
+}
+
+
+@-webkit-keyframes flip-scale-down-diag-1 {
+    0% {
+      -webkit-transform: scale(1) rotate3d(1, 1, 0, 0deg);
+              transform: scale(1) rotate3d(1, 1, 0, 0deg);
+    }
+    50% {
+      -webkit-transform: scale(0.4) rotate3d(1, 1, 0, -90deg);
+              transform: scale(0.4) rotate3d(1, 1, 0, -90deg);
+    }
+    100% {
+      -webkit-transform: scale(1) rotate3d(0, 0, 0, -180deg);
+      transform: scale(1) rotate3d(0, 0, 0, -180deg);
+    }
+  }
+  @keyframes flip-scale-down-diag-1 {
+    0% {
+      -webkit-transform: scale(1) rotate3d(1, 1, 0, 0deg);
+              transform: scale(1) rotate3d(1, 1, 0, 0deg);
+    }
+    50% {
+      -webkit-transform: scale(0.4) rotate3d(1, 1, 0, -90deg);
+              transform: scale(0.4) rotate3d(1, 1, 0, -90deg);
+    }
+    100% {
+      -webkit-transform: scale(1) rotate3d(0, 0, 0, -180deg);
+              transform: scale(1) rotate3d(0, 0, 0, -180deg);
+    }
+  }
+  
