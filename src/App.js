@@ -9,6 +9,9 @@ import {
 import './App.css';
 import ElementCard from './Components/ElementCard';
 import { RiSearchEyeFill } from 'react-icons/ri'
+require("dotenv").config({ path: '../.env' });
+
+const API_KEY = process.env.REACT_APP_API_KEY
 function App() {
   const [inputs, setInputs] = useState({
     nameOfElement: "",
@@ -27,7 +30,7 @@ function App() {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "periodic-table-of-elements.p.rapidapi.com",
-        "x-rapidapi-key": "4327907d8cmshf9dfbf382f6e880p1f5c32jsn32d31187752c"
+        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
       }
     }).then(res => res.json())
       .then(data => setElement(data))

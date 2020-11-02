@@ -18,7 +18,7 @@ function ElementCard(props) {
     return (
         <React.Fragment>
             {front &&
-                <div className={front ? "elementContainer" : null}>
+                <div className={front ? "elementContainer" : "elementProperties"}>
                     <IconContext.Provider value={{ size: 25 }}>
                         <div onClick={handleProperties} className="infoButton"><AiOutlineInfoCircle /></div>
                     </IconContext.Provider>
@@ -30,7 +30,7 @@ function ElementCard(props) {
                     </div>
                 </div>}
             {!front &&
-                <div className={!front ? "elementProperties" : null} >
+                <div className={!front ? "elementProperties" : "elementContainer"} >
                     <div className="elementTitle"><h1>{props.ElementName}</h1></div>
                     <IconContext.Provider value={{ size: 25 }}>
                         <div onClick={handleProperties} className="elementButton"><FaElementor /></div>
@@ -52,7 +52,7 @@ function ElementCard(props) {
                             <li><span># of Neutrons</span>: {props.NumberofNeutrons}</li>
                             <li><span># of Protons</span>: {props.NumberofProtons}</li>
                             <li><span># of Shells</span>: {props.NumberofShells}</li>
-                            <li><span>Radioactive?</span>:{props.Radioactive}</li>
+                            <li><span>Radioactive?</span>: {props.Radioactive}</li>
                             <li><span>Year Discovered</span>: {props.Year}</li>
                             <li><span>Discoverer</span>: {props.Discoverer}</li>
                         </ul>
