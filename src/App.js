@@ -15,9 +15,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path='/periodic' component={PeriodicTableSearch} />
-          <Route exact path='/organic' />
-          <Route exact path='calculators' />
+          <Route path={process.env.PUBLIC_URL + '/periodic'} component={PeriodicTableSearch} />
+          <Route path={process.env.PUBLIC_URL + '/organic'} />
+          <Route path={process.env.PUBLIC_URL + '/calculators'} />
         </Switch>
         <NavBar />
       </Router>
