@@ -8,19 +8,20 @@ import {
   Route,
   useParams,
   Link,
-  BrowserRouter
+  BrowserRouter,
+  HashRouter
 } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <HashRouter>
         <Switch>
-          <Route path={process.env.PUBLIC_URL + '/periodic'} component={PeriodicTableSearch} />
-          <Route path={process.env.PUBLIC_URL + '/organic'} />
-          <Route path={process.env.PUBLIC_URL + '/calculators'} />
+          <Route exact path='/periodic' component={PeriodicTableSearch} />
+          <Route exact path='/#organic' />
+          <Route exact path='/#calculators' />
         </Switch>
         <NavBar />
-      </Router>
+      </HashRouter>
     </div>
   )
 }
