@@ -25,7 +25,8 @@ function App() {
 
   const [element, setElement] = useState('')
 
-  function getElement() {
+  function getElement(e) {
+    e.preventDefault()
     if (nameOfElement === "") {
       alert('Please Enter an Element')
     } else {
@@ -44,12 +45,15 @@ function App() {
   return (
     <div className="App">
       <div className="searchBar">
-        <input
-          placeholder="Search by Name"
-          name="nameOfElement"
-          value={nameOfElement}
-          onChange={e => onChange(e)} />
-        <center><button onClick={getElement}>Search</button></center>
+        <form onSubmit={getElement}>
+          <input
+            placeholder="Search by Name"
+            name="nameOfElement"
+            value={nameOfElement}
+            onChange={e => onChange(e)} />
+          <center><button type="submit">Search</button></center>
+        </form>
+
 
         <div>
         </div>
