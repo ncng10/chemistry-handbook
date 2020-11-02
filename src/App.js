@@ -26,15 +26,19 @@ function App() {
   const [element, setElement] = useState('')
 
   function getElement() {
-    fetch(`https://periodic-table-of-elements.p.rapidapi.com/element/name/${nameOfElement}`, {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-host": "periodic-table-of-elements.p.rapidapi.com",
-        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
-      }
-    }).then(res => res.json())
-      .then(data => setElement(data))
-    console.log(element)
+    if (nameOfElement === "") {
+      alert('Please Enter an Element')
+    } else {
+      fetch(`https://periodic-table-of-elements.p.rapidapi.com/element/name/${nameOfElement}`, {
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-host": "periodic-table-of-elements.p.rapidapi.com",
+          "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+        }
+      }).then(res => res.json())
+        .then(data => setElement(data))
+      console.log(element)
+    }
   }
 
   return (
