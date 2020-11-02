@@ -10,10 +10,11 @@
   background-color: #3A445D;
   height: 100vh;
 }
+
 input {
-  width: 250px;
+  width: 290px;
   text-align: center;
-  height: 30px;
+  height: 50px;
   border: none;
   outline: none;
   background-color: #D4D2A5;
@@ -28,18 +29,17 @@ input {
 }
 
 .searchBar {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
+  margin-top: 75px;
 }
 
 button {
-  height: 30px;
-  width: 150px;
+  height:50px;
+  width: 50px;
+  margin-left: 10px;
   background-color: #FCDEBE;
   color: #3A445D;
-  margin-top: 15px;
-  border-radius: 5px;
+  margin-top: 0px;
+  border-radius: 4px;
   outline:none;
   border:none;
 }
