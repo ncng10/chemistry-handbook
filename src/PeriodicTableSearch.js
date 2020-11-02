@@ -8,23 +8,19 @@ import {
 } from "react-router-dom";
 import './App.css';
 import ElementCard from './Components/ElementCard';
-import { ImCheckmark } from 'react-icons/im'
+import { ImCheckmark } from 'react-icons/im';
 require("dotenv").config({ path: '../.env' });
 
-const API_KEY = process.env.REACT_APP_API_KEY
 function PeriodicTableSearch() {
     const [inputs, setInputs] = useState({
         nameOfElement: "",
         symbol: ""
     })
     const { nameOfElement, symbol } = inputs;
-
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })
     }
-
     const [element, setElement] = useState('')
-
     function getElement(e) {
         e.preventDefault()
         if (nameOfElement === "") {
@@ -41,9 +37,9 @@ function PeriodicTableSearch() {
             console.log(element)
         }
     }
-
     return (
         <div className="periodicTableSearch">
+            <div className="periodicHeader"><h3>Periodic Table Search</h3></div>
             <center>
                 <div className="searchBar">
                     <form onSubmit={getElement}>
@@ -54,8 +50,6 @@ function PeriodicTableSearch() {
                             onChange={e => onChange(e)} />
                         <button type="submit"><ImCheckmark /></button>
                     </form>
-
-
                     <div>
                     </div>
                 </div>
@@ -79,6 +73,14 @@ function PeriodicTableSearch() {
                     Radioactive={element.Radioactive}
                     Year={element.Year}
                     Discoverer={element.Discoverer}
+                    Type={element.Type}
+                    AtomicRadius={element.AtomicRadius}
+                    Density={element.Density}
+                    BoilingPoint={element.BoilingPoint}
+                    Period={element.Period}
+                    FirstIonization={element.FirstIonization}
+                    SpecificHeat={element.SpecificHeat}
+                    MeltingPoint={element.MeltingPoint}
                 />
             }
         </div>
