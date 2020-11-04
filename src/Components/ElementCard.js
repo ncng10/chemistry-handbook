@@ -6,7 +6,8 @@ import { FaElementor } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 function ElementCard(props) {
     const [front, setFrontActive] = useState(true);
-    const { AtomicNumber, Symbol,
+    const {
+        AtomicNumber, Symbol,
         ElementName, AtomicMass,
         Electronegativity, Metal,
         Metalloid, Natural, Nonmetal,
@@ -78,7 +79,7 @@ function ElementCard(props) {
                 </ul>
                 <ul>
                     <li><span>First Ionization:</span>{FirstIonization}</li>
-                    <li style={{ marginTop: 10 }}><span>Specific Heat:</span>{FirstIonization}</li>
+                    <li style={{ marginTop: 10 }}><span>Specific Heat:</span>{SpecificHeat}</li>
                     <li style={{ marginTop: 10 }}><span>Period:</span>{Period}</li>
                 </ul>
             </div>
