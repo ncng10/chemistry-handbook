@@ -23,6 +23,7 @@ function MoleCalc() {
             <div className="calculatorContainer">
                 <form className="calculatorInputs">
                     <input
+                        style={{ height: 45 }}
                         name="mass"
                         value={mass}
                         placeholder="Enter the mass"
@@ -30,6 +31,7 @@ function MoleCalc() {
                         maxLength="15"
                     />
                     <input
+                        style={{ height: 45 }}
                         name="moles"
                         value={moles}
                         placeholder="Enter the moles"
@@ -37,6 +39,7 @@ function MoleCalc() {
                         maxLength="15"
                     />
                     <input
+                        style={{ height: 45 }}
                         name="molecularWeight"
                         value={molecularWeight}
                         placeholder="Enter the Molecular Weight"
@@ -47,12 +50,13 @@ function MoleCalc() {
                 <div style={{
                     display: "flex",
                     flexDirection: "column",
-                    color: "white"
+                    color: "white",
+                    height: 150
                 }}
                     className="resultsContainer">
-                    <div>Mass: {massResult}</div>
-                    <div>Moles: {molesResult}</div>
-                    <div>Molecular Weight: {molecularWeightResult} </div>
+                    <div>Mass: {massResult} grams</div>
+                    <div>Moles: {molesResult} moles</div>
+                    <div>Molecular Weight: {molecularWeightResult} g/mol</div>
                 </div>
                 {calculationsActive &&
                     <div style={{

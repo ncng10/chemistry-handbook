@@ -44,7 +44,7 @@ function NavBar() {
                     </li>
                     <li >
                         <IconContext.Provider value={{ size: 25, color: '#FCDEBE' }}>
-                            <div ><GiMolecule /></div>
+                            <Link to='/organic'><div ><GiMolecule /></div></Link>
                         </IconContext.Provider>
                     </li>
                 </ul>
