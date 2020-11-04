@@ -5,6 +5,7 @@ function OrganicSearch() {
         moleculeName: ""
     });
     const [image, setImage] = useState([])
+    const [molecularWeight, setMolecularWeight] = useState([])
     const { moleculeName } = inputs;
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })
@@ -20,6 +21,17 @@ function OrganicSearch() {
                     "accept": "image/png"
                 }
             }).then(res => setImage(res.url))
+                .then(
+                    fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${moleculeName}/property/MolecularWeight/JSON`, {
+                        "method": "GET",
+                        "headers": {
+                            "accept": "application/json"
+                        }
+                    }).then(res => res.json())
+                        .then(data => data.PropertyTable.Properties.forEach((weight) => {
+                            setMolecularWeight(weight.MolecularWeight)
+                        }))
+                )
         }
     }
     return (
@@ -40,6 +52,7 @@ function OrganicSearch() {
             <div>
                 <img src={image} />
             </div>
+            <div>{molecularWeight}</div>
         </div>
     )
 }
