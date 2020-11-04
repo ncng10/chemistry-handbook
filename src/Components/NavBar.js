@@ -34,7 +34,7 @@ function NavBar() {
                 }}>
                     <li style={{ marginLeft: -85 }} >
                         <IconContext.Provider value={{ size: 25, color: '#FCDEBE' }}>
-                            <div><FaCalculator /></div>
+                            <Link to='/calculators'> <div><FaCalculator /></div></Link>
                         </IconContext.Provider>
                     </li>
                     <li >
