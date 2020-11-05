@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { ImCheckmark } from 'react-icons/im';
+import OrganicInfo from './Components/OrganicInfo';
 function OrganicSearch() {
     const [inputs, setInputs] = useState({
         moleculeName: ""
     });
     const [image, setImage] = useState([]);
     const [molecularInfo, setMolecularInfo] = useState([]);
+    const [result, setResult] = useState(false);
     const { moleculeName } = inputs;
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -30,14 +32,28 @@ function OrganicSearch() {
                     }).then(res => res.json())
                         .then(data => data.PropertyTable.Properties.forEach((info) => {
                             setMolecularInfo(info)
+                            setResult(true)
                         }))
                 )
         }
     };
     return (
         <div className="organicSearchContainer">
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '100%',
+                    fontSize: 25,
+                    color: '#FCDEBE'
+
+                }}
+            ><h3>Organic Molecule Search</h3></div>
             <form onSubmit={getElement} className="organicSearch">
-                <div className="searchBar">
+                <div
+                    style={{ marginTop: 0 }}
+                    className="searchBar">
                     <input
                         placeholder="Search by Name"
                         name="moleculeName"
@@ -48,35 +64,12 @@ function OrganicSearch() {
                     </div>
                 </div>
             </form>
-            <div>
-                <img
-                    style={{
-                        marginTop: 50,
-                        width: 350,
-                        height: 300,
-                        borderRadius: 15,
-                        border: 'none'
-                    }}
-                    src={image} />
-            </div>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: 350,
-                    height: 125,
-                    backgroundColor: "#5E5768",
-                    borderRadius: 10,
-                    color: '#FCDEBE'
-                }}
-                className="molecularInfoContainer">
-                <div>
-                    Molecular Formula: {molecularInfo.MolecularFormula}</div>
-                <div style={{ marginTop: 15 }}>
-                    Molecular Weight: {molecularInfo.MolecularWeight} g/mol </div>
-            </div>
+            {result &&
+                <OrganicInfo
+                    MolecularWeight={molecularInfo.MolecularWeight}
+                    MolecularFormula={molecularInfo.MolecularFormula}
+                    image={image}
+                />}
         </div>
     )
 }
