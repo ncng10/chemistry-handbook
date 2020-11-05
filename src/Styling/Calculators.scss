@@ -61,3 +61,23 @@
       opacity: 1;
     }
   }
+
+
+  @media(min-width:600px) {
+    .calculatorContainer{
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 100px;
+  }
+  .calculatorInputs {
+    margin-right: 75px;
+  }
+  .resultsContainer {
+    margin-right: 75px;
+  }
+  .calculationsButtonContainer {
+   button {
+    margin-top: 75px;
+   }
+  }
+}

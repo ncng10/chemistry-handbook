@@ -89,21 +89,22 @@ function MoleCalc() {
                         </div>
 
                     </div>}
-                <div
-                    style={{ marginTop: 15 }}
-                    className="calculationsButtonContainer">
-                    {!calculationsActive ?
-                        <button
-                            onClick={() => setCalculationsActive(true)}
-                            style={{ width: 200, color: '#5E5768' }}
-                            className="calculationsButton">Want to see the calculations?</button>
-                        :
-                        <button
-                            onClick={() => setCalculationsActive(false)}
-                            style={{ width: 200, color: '#5E5768' }}
-                            className="calculationsButton">Close</button>}
-                </div>
             </div>
+            <div
+                style={{ marginTop: 15 }}
+                className="calculationsButtonContainer">
+                {!calculationsActive ?
+                    <button
+                        onClick={() => setCalculationsActive(true)}
+                        style={{ width: 200, color: '#5E5768' }}
+                        className="calculationsButton">Want to see the calculations?</button>
+                    :
+                    <button
+                        onClick={() => setCalculationsActive(false)}
+                        style={{ width: 200, color: '#5E5768' }}
+                        className="calculationsButton">Close</button>}
+            </div>
+
         </React.Fragment>
     )
 }
